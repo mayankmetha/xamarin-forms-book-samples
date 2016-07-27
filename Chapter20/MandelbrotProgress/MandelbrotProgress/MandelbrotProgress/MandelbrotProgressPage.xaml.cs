@@ -33,6 +33,7 @@ namespace MandelbrotProgress
             // Render the Mandelbrot set on a bitmap.
             BmpMaker bmpMaker = await CalculateMandelbrotAsync(progressReporter);
             image.Source = bmpMaker.Generate();
+            progressBar.IsVisible = false;
         }
 
         Task<BmpMaker> CalculateMandelbrotAsync(IProgress<double> progress)
